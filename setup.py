@@ -84,40 +84,21 @@ class PyTest(TestCommand):
         errno = pytest.main(self.pytest_args)
         sys.exit(errno)
 
-# Get the version string. Cannot be done with import!
-g = {}
-with open(os.path.join('invenio_accounts', 'version.py'), 'rt') as fp:
-    exec(fp.read(), g)
-    version = g['__version__']
-
 setup(
-    name='invenio-accounts',
-    version=version,
+    name='irrelevant-flask-test-thing-pls',
+    version='0.0',
     description=__doc__,
-    long_description=readme + '\n\n' + history,
-    keywords='invenio accounts',
+    long_description='tl;dr',
+    keywords='why does it not work',
     license='GPLv2',
-    author='CERN',
-    author_email='info@invenio-software.org',
-    url='https://github.com/inveniosoftware/invenio-accounts',
+    author='Jeremy Knackintosh',
+    author_email='',
+    url='https://github.com/otron/flask-minimal-testing-issue.git',
     packages=packages,
     zip_safe=False,
     include_package_data=True,
     platforms='any',
-    entry_points={
-        'invenio_base.apps': [
-            'invenio_accounts = invenio_accounts:InvenioAccounts',
-        ],
-        'invenio_base.blueprints': [
-            'invenio_accounts = invenio_accounts.views:blueprint',
-        ],
-        'invenio_db.models': [
-            'invenio_accounts = invenio_accounts.models',
-        ],
-        'invenio_i18n.translations': [
-            'invenio_accounts = invenio_accounts',
-        ],
-    },
+    entry_points=None,
     extras_require=extras_require,
     install_requires=install_requires,
     setup_requires=setup_requires,
