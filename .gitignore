@@ -45,7 +45,6 @@ coverage.xml
 
 # Translations
 *.mo
-*.pot
 
 # Django stuff:
 *.log
@@ -55,3 +54,6 @@ docs/_build/
 
 # PyBuilder
 target/
+
+examples/instance/
+examples/static/
