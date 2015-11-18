@@ -18,3 +18,11 @@ def test_bgapp(app):
     assert response.code == 200
 
     bgapp.stop_server()
+
+
+def test_main_course(bg_app):
+    assert bg_app
+    bg_app.start_server()
+    url = 'http://localhost:5000/'
+    response = urllib2.urlopen(url)
+    assert response.code == 200
